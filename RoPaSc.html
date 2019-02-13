@@ -4,11 +4,48 @@
 <body>
 
   <script>
-    function computerPlay(myArray) {
-      return myArray[Math.floor(Math.random() * Math.floor(myArray.length))];
-}
-var myArray = ['Rock' , 'Paper' , 'Scissors'];
-console.log(computerPlay(myArray));
+  var choice = prompt("Please choose from either rock, paper or scissors.", "write your choice here");
+  var playerSelection = choice.toLocaleLowerCase();
+
+  function computerPlay(myArray) {
+  return myArray[Math.floor(Math.random() * Math.floor(myArray.length))];
+  }
+  var myArray = ['rock', 'paper', 'scissors'];
+  console.log(computerPlay(myArray));
+  console.log(playerSelection);
+  var computerSelection = myArray;
+
+  var compare = function(playerSelection, computerSelection) {
+      if (playerSelection === computerSelection) {
+      console.log("The result is a tie!")
+      } 
+      else if (playerSelection === "rock") {
+          if (computerSelection === 'scissors') {
+          console.log("You win! Rock beats scissors.")
+          }
+            else {
+            console.log("You lose. Paper wins")
+          }
+      }
+      else if (playerSelection === "paper") {
+          if (computerSelection === "rock") {
+          console.log("You win! Paper beats rock.")
+          }
+            else {
+            console.log("You lose. Scissors wins")
+          }
+      } 
+      else if (playerSelection === "scissors") {
+          if (computerSelection === "paper") {
+          console.log("You win! Scissors beats paper.")
+          }
+            else {
+            console.log("You lose. Rock wins")
+          }
+      }
+  }
+compare(playerSelection, computerSelection);
+
   </script>
 
 </body>
